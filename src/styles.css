@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+ body
+{
+  font-family: 'Open Sans', sans-serif;
+    background: #e6e7e8;
+
+}
+h4,h2,h1
+{
+  color:#032A63  ;
+}
+p:hover{
+  color:#032A63  ;
+}
+
+
+ html  {
+
+
+  filter: invert(0);
+ }
+ img  {
+
+
+  filter: invert(0);
+ }

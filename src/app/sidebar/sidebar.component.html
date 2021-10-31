@@ -1,0 +1,33 @@
+<section class="py-5">
+  <div class="py-5"  *ngIf="isLogin">
+    <div class="p-3 position-relative ">
+      <input  [(ngModel)]='word' type="search" class="form-control" placeholder="search">
+      <div class="position-absolute end-0 top-0">
+        <button class="btn btn-primary mt-3 me-3 "   [routerLink]="['/search',word]"  >Find</button>
+      </div>
+    </div>
+    <div class="p-3">
+      <h4>
+        World News
+      </h4>
+      <div>
+        <div class="">
+          <div class=" py-2  " *ngFor=" let slide of worldNews">
+              <a href="{{slide.url}}"  target="_blank" class="text-decoration-none text-black">
+                  <div class="">
+                      <img [src]="slide.multimedia[2].url" alt="" class="w-100">
+                          <p class="p-2">
+                              {{slide.abstract||slide.title}}
+                          </p>
+                      </div>
+                  </a>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>

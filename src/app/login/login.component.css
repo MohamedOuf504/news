@@ -1,0 +1,8 @@
+section
+{
+  background-image: url(../../assets/image/2-top.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 50%  50%;
+  padding-bottom: 4.5rem !important;
+}

@@ -1,0 +1,41 @@
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row justify-content-start  py-4">
+            <div class="col-md-6">
+                <div class=" p-5">
+                    <h1 class="m-3 text-primary">
+                        LOGIN</h1>
+                    <h3 *ngIf="error" class="">
+                        {{error}}
+                    </h3>
+                    <form [formGroup]='loginForm' (ngSubmit)="SubmitloginForm(loginForm)">
+                        <input class="form-control  m-3" formControlName="email" type="text" placeholder="Email">
+                            <div class="p-1" *ngIf="loginForm.get('email')?.errors != null && loginForm.get('email')?.touched ">
+                                <h6 class="text-danger  " *ngIf="loginForm.get('email')?.errors?.required">
+                                    *Email is Required
+                                </h6>
+                                <h6 class="text-danger" *ngIf="loginForm.get('email')?.errors?.email">
+                                    *Email is invalid
+                                </h6>
+                            </div>
+                            <input class="form-control  m-3" formControlName="password" type="password" placeholder="Password">
+                                <div class="p-1" *ngIf="loginForm.get('password')?.errors != null && loginForm.get('password')?.touched ">
+                                    <h6 class="text-danger " *ngIf="loginForm.get('password')?.errors?.required">
+                                        *Password is Required
+                                    </h6>
+                                    <h6 class="text-danger" *ngIf="loginForm.get('password')?.errors?.pattern">
+                                     *password must contain at min 1 characters
+                                      *password min 6 max 10                                                 </h6>
+                                </div>
+                                <div class="m-3">
+                                    <input type="checkbox" name="" value="true" class="me-2" id="">
+                                    <label for=""> keep me signed in</label>
+
+                                  </div>
+                                    <button type="submit" [disabled]="loginForm.invalid" class=" btn btn-primary mx-3 ">LOGIN</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>

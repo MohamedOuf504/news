@@ -1,0 +1,73 @@
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-start py-3">
+            <div class="col-md-6">
+                <div class=" p-5">
+                  <h1 class="m-3 text-primary"> REGISTER</h1>
+                  <h3 *ngIf="error" class="">
+                    {{error}}
+                  </h3>
+                    <form [formGroup]='registerForm'  (ngSubmit)="SubmitregisterForm(registerForm)" >
+                        <input class="form-control m-3" formControlName="first_name" type="text" placeholder="First Name"   >
+                            <div class="p-1" *ngIf="registerForm.get('first_name')?.errors != null && registerForm.get('first_name')?.touched ">
+                                <h6 class="text-danger" *ngIf="registerForm.get('first_name')?.errors?.required ">
+                                    *First Name is Required
+                                </h6>
+                                <h6 class="text-danger" *ngIf="registerForm.get('first_name')?.errors?.minlength ">
+                                    *First Name MinLength is 3
+                                </h6>
+                                <h6 class="text-danger" *ngIf="registerForm.get('first_name')?.errors?.maxlength " >
+                                    *First Name MaxLength is 8
+                                </h6>
+                            </div>
+
+                            <input class="form-control  m-3" formControlName="last_name" type="text" placeholder="Last Name">
+                                <div class="p-1" *ngIf="registerForm.get('last_name')?.errors != null && registerForm.get('last_name')?.touched ">
+                                    <h6 class="text-danger" *ngIf="registerForm.get('last_name')?.errors?.required ">
+                                        *Last Name is Required
+                                    </h6>
+                                    <h6 class="text-danger" *ngIf="registerForm.get('last_name')?.errors?.minlength">
+                                        *Last Name MinLength is 3
+                                    </h6>
+                                    <h6 class="text-danger" *ngIf="registerForm.get('last_name')?.errors?.maxlength">
+                                        *Last Name MaxLength is 8
+                                    </h6>
+                                </div>
+
+                                <input class="form-control  m-3" formControlName="age" type="text" placeholder="Age">
+                                    <div class="p-1" *ngIf="registerForm.get('age')?.errors != null && registerForm.get('age')?.touched ">
+                                        <h6 class="text-danger" *ngIf="registerForm.get('age')?.errors?.required">
+                                            *Age is Required
+                                        </h6>
+                                        <h6 class="text-danger" *ngIf="registerForm.get('age')?.errors?.min" >
+                                          *Age is invalid
+                                      </h6>
+                                      <h6 class="text-danger" *ngIf="registerForm.get('age')?.errors?.max" >
+                                        *Age is invalid
+                                    </h6>
+                                    </div>
+                                    <input class="form-control  m-3" formControlName="email" type="text" placeholder="Email">
+                                        <div class="p-1"  *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched ">
+                                            <h6 class="text-danger  " *ngIf="registerForm.get('email')?.errors?.required">
+                                                *Email is Required
+                                            </h6>
+                                            <h6 class="text-danger" *ngIf="registerForm.get('email')?.errors?.email">
+                                              *Email is invalid
+                                          </h6>
+                                        </div>
+                                        <input class="form-control  m-3" formControlName="password" type="password" placeholder="Password" >
+                                        <div class="p-1" *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched ">
+                                          <h6 class="text-danger "  *ngIf="registerForm.get('password')?.errors?.required">
+                                              *Password is Required
+                                          </h6>
+                                          <h6 class="text-danger" *ngIf="registerForm.get('password')?.errors?.pattern">
+                                            *password must contain at min 1 characters
+                                            *password min 6 max 10                                                     </h6>
+                                      </div>
+                                      <button type="submit" [disabled]="registerForm.invalid" class=" btn btn-primary mx-3 ">Register</button>
+                                      </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>

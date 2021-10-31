@@ -1,0 +1,91 @@
+<section class="py-5 ">
+    <div class=" ">
+        <div class="row ">
+            <div class="col-md-12  py-4 x">
+                <div>
+                    <div class="">
+                        <owl-carousel-o [options]="customOptions">
+                            <ng-container *ngFor=" let slide of allArticles ; let i =index">
+                                <ng-template carouselSlide="carouselSlide">
+                                    <img [src]="slide.multimedia[2].url" class="w-100 h-100">
+                                        <h3 class="py-2">
+                                            {{slide.title}}
+                                        </h3>
+                                        <p>
+                                            publish:{{slide.published_date}}
+                                        </p>
+                                        
+                                    </ng-template>
+                                </ng-container>
+                            </owl-carousel-o>
+                        </div>
+
+                                <div class=" row g-0 p-2">
+                                    <div class=" col-md-4   " *ngFor=" let slide of allArticles">
+                                       <div class="p-1">
+                                        <a href="{{slide.url}}"  target="_blank" class="text-decoration-none text-black">
+                                          <div class="">
+                                              <img [src]="slide.multimedia[2].url" alt="" class="w-100">
+                                                  <p class="p-2">
+                                                      {{slide.title||slide.abstract}}
+                                                  </p>
+                                              </div>
+                                          </a>
+                                       </div>
+                                        </div>
+
+                                    </div>
+
+                        <div routerLink='/Technology'>
+                            <h1 class="pb-2">technology :
+                            </h1>
+
+                            <div *ngFor=" let slide of technologyArticles ; let i =index">
+                                <img [src]="slide.multimedia[2].url" class="w-100 h-100">
+
+                                    <h3 class="py-2">
+                                        {{slide.title}}
+                                    </h3>
+                                    <p>
+                                        publish:{{slide.published_date}}
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div routerLink="/Business">
+                                <h1 class="pb-2">Business :
+                                </h1>
+
+                                <div *ngFor=" let slide of businessArticles ; let i =index">
+                                    <img [src]="slide.multimedia[2].url" class="w-100 h-100">
+
+                                        <h3 class="py-2">
+                                            {{slide.title}}
+                                        </h3>
+                                        <p>
+                                            publish:{{slide.published_date}}
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div routerLink="/Health">
+                                    <h1 class="pb-2">Health :
+                                    </h1>
+
+                                    <div *ngFor=" let slide of healthArticles ; let i =index">
+                                        <img [src]="slide.multimedia[2].url" class="w-100 h-100">
+
+                                            <h3 class="py-2">
+                                                {{slide.title}}
+                                            </h3>
+                                            <p>
+                                                publish:{{slide.published_date}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </section>

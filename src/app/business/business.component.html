@@ -1,0 +1,26 @@
+<section class="py-5">
+  <div class="container py-5">
+
+    <div class="p-3" *ngFor=" let slide of businessArticles">
+      <a href="{{slide.url}}"  target="_blank" class="text-decoration-none text-black">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <img [src]="slide.multimedia[2].url" class=" img-fluid">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div>
+            <h2>{{slide.title}}</h2>
+            <h5>{{slide.abstract}}</h5>
+            <p>
+              publish:{{slide.published_date}}
+            </p>
+            <p> source: {{slide.source}}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</section>
